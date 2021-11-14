@@ -1,9 +1,11 @@
 const { default: axios } = require('axios');
 const express = require('express');
-const app = express()
+const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 const PORT = process.env.PORT || 4000;
-
 
 app.get('/search/repositories', (req, res) => {
 
