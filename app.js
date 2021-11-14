@@ -24,6 +24,21 @@ app.get('/search/repositories', (req, res) => {
 
 })
 
+app.get("/single-repo", (req, res) => {
+  axios
+    .get(req.query.url)
+    .then((response) => {
+      res.send({
+        msg: "success",
+        data: response.data,
+      });
+    })
+    .catch((err) => {
+      res.send("oops! error occurred!");
+      console.log(err);
+    });
+});
+
 app.get('/', (req, res) => {
     res.send('hello world!');
 })
