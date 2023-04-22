@@ -1,0 +1,15 @@
+version: '2'
+services:
+  backend:
+    container_name: "gitback_c"
+    image: "gitback:1"
+    build: .
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "5000:4000"
+    
+
+    
+
